@@ -1,6 +1,7 @@
 # WHUT Bachelor Thesis v 0.1b
 
-=================================================================
+
+
 ## Introduction
 
 This template is for undergraduate thesis at [Wuhan University of Techology](http://english.whut.edu.cn). 
@@ -17,6 +18,10 @@ All questions and suggestions are welcomed, please file an issue in this repo.
 
 
 ## 使用方法
+
+* 建议安装 MiKTeX，MiKTeX 包含基本的工具，对于一些宏包可以按需安装，更轻便。
+
+  清华大学镜像：<https://mirrors.tuna.tsinghua.edu.cn/ctan/systems/windows/miktex/>
 
 * 建议使用[VS Code](https://code.visualstudio.com/)的[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)插件进行编辑，编译链设置如下：
 ```
@@ -69,4 +74,64 @@ All questions and suggestions are welcomed, please file an issue in this repo.
 ```
 * 设定主文档为`thesis.tex`，尝试进行编译
 
+### Linux
 
+#### step1：安装*LaTeX*发行版
+
+你可以选择安装 **texlive** 或者 **MiKTeX** ；texlive 有多种安装包，可以选择适合你需求的包下载：
+
+- texlive-base - 136 MB
+- texlive-latex-recommended - 177 MB
+- texlive - 240 MB
+- texlive-latex-extra - 404 MB
+- texlive-full - 4714 MB
+
+但是 Linux 下的 texlive 暂时没有自动下载宏包的能力，这意味着如果你下载的 texlive 不是完整版，你可能会缺少需要的宏包；所以这里推荐使用 miktex，它可以按需安装宏包，更轻便，你可以使用下面的命令快速安装 miktex，或者[查看详细的安装步骤](https://miktex.org/howto/install-miktex-unx)：
+
+1. 注册 GPG 秘钥
+
+   ```shell
+   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys D6BC243565B2087BC3F897C9277A7293F59E4889
+   ```
+
+2. 添加安装源
+
+   如果你是 Ubuntu 18.04：
+
+   ```shell
+   echo "deb http://miktex.org/download/ubuntu bionic universe" | sudo tee /etc/apt/sources.list.d/miktex.list
+   ```
+
+   如果你是  Ubuntu 16.04：
+
+   ```shell
+   echo "deb http://miktex.org/download/ubuntu xenial universe" | sudo tee /etc/apt/sources.list.d/miktex.list
+   ```
+
+3. 安装 MiKTeX
+
+   ```shell
+   sudo apt-get update
+   sudo apt-get install miktex
+   ```
+
+4. 设置 MiKTeX
+
+   在 application 中搜索 `MiKTeX Console` 并打开，点击`Finish private setup`即可。
+
+   ![image-20200226212107368](README.assets/image-20200226212107368.png)
+
+#### step2：安装文本编辑器
+
+使用任意你喜欢的文本编辑器，这里推荐使用 **VSCode** ，并安装 **LaTeX Workshop** 插件。
+
+<img src="README.assets/image-20200226122154420.png" alt="Vscode + LaTeX Workshop"  />
+
+> 如果出现：`Recipe terminated with fatal error: spawn latexmk ENOENT`，请检查是否安装`latexmk`
+
+有关更多 LaTeX Workshop 插件的使用方法，可见：[James-Yu/LaTeX-Workshop::wiki#compile](https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile#building-the-document)
+
+## 参考文档
+
+- [How to install LaTex on Ubuntu 18.04 Bionic Beaver Linux](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux)
+- [Install MiKTeX for Linux - MiKTeX.org](https://miktex.org/howto/install-miktex-unx)
