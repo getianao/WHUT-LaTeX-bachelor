@@ -1,6 +1,4 @@
-# WHUT Bachelor Thesis v 0.1b
-
-
+# 武汉理工大学本科毕业论文 LaTeX 模版
 
 ## Introduction
 
@@ -8,10 +6,8 @@ This template is for undergraduate thesis at [Wuhan University of Techology](htt
 LaTeX is a popular typesetting document preparation system in many scientific fields.
 All questions and suggestions are welcomed, please file an issue in this repo.
 
-
-
 ## 简介
-本模板是[武汉理工大学](http://www.whut.edu.cn)本科生毕业论文LaTeX免费模板。LaTeX是一个流行的编辑科学类文章的工具。
+本模板是[武汉理工大学](http://www.whut.edu.cn)本科生毕业论文LaTeX免费模板（**非官方**）。LaTeX是一个流行的编辑科学类文章的工具。
 大多数科学类书籍，期刊，文章都采用了LaTeX。
 使用这个模板可以使你从无聊的格式限制中解脱出来，从而更专注地阐述自己的想法。
 希望本模板能够帮助你入门LaTeX, 如果你有关于本模板的良好意见和建议，请在顶栏的问题(issue)一栏中提出。
@@ -19,64 +15,9 @@ All questions and suggestions are welcomed, please file an issue in this repo.
 
 ## 使用方法
 
-* 建议安装 MiKTeX，MiKTeX 包含基本的工具，对于一些宏包可以按需安装，更轻便。
-
-  清华大学镜像：<https://mirrors.tuna.tsinghua.edu.cn/ctan/systems/windows/miktex/>
-
-* 建议使用[VS Code](https://code.visualstudio.com/)的[LaTeX Workshop](https://marketplace.visualstudio.com/items?itemName=James-Yu.latex-workshop)插件进行编辑，编译链设置如下：
-```
-    "latex-workshop.latex.tools": [
-        {
-            // 编译工具和命令
-            "name": "xelatex",
-            "command": "xelatex",
-            "args": [
-                "-synctex=1",
-                "-interaction=nonstopmode",
-                "-file-line-error",
-                "-pdf",
-                "%DOCFILE%"
-            ]
-        },
-        {
-            "name": "biber",
-            "command": "biber",
-            "args": [
-                "%DOCFILE%"
-            ]
-        },
-        {
-            "name": "bibtex",
-            "command": "bibtex",
-            "args": [
-                "%DOCFILE%"
-            ]
-        }
-
-    ],
-    "latex-workshop.latex.recipes": [
-        {
-            "name": "xelatex",
-            "tools": [
-                "xelatex"
-            ]
-        },
-        {
-            "name": "xelatex -> bibtex -> xelatex*2",
-            "tools": [
-                "xelatex",
-                "bibtex",
-                "xelatex",
-                "xelatex"
-            ]
-        },
-    ]
-```
-* 设定主文档为`thesis.tex`，尝试进行编译
-
 ### Linux
 
-#### step1：安装*LaTeX*发行版
+#### Step1：安装*LaTeX*发行版
 
 你可以选择安装 **texlive** 或者 **MiKTeX** ；texlive 有多种安装包，可以选择适合你需求的包下载：
 
@@ -86,7 +27,7 @@ All questions and suggestions are welcomed, please file an issue in this repo.
 - texlive-latex-extra - 404 MB
 - texlive-full - 4714 MB
 
-但是 Linux 下的 texlive 暂时没有自动下载宏包的能力，这意味着如果你下载的 texlive 不是完整版，你可能会缺少需要的宏包；所以这里推荐使用 miktex，它可以按需安装宏包，更轻便，你可以使用下面的命令快速安装 miktex，或者[查看详细的安装步骤](https://miktex.org/howto/install-miktex-unx)：
+但是 Linux 下的 texlive 暂时没有自动下载宏包的能力，这意味着如果你下载的 texlive 不是完整版，你可能会缺少需要的宏包；所以这里推荐使用 miktex，它可以按需安装宏包，更轻便，你可以使用下面的命令快速安装 miktex，或者[查看详细的 MiKTeX 安装步骤](https://miktex.org/howto/install-miktex-unx)：
 
 1. 注册 GPG 秘钥
 
@@ -117,21 +58,93 @@ All questions and suggestions are welcomed, please file an issue in this repo.
 
 4. 设置 MiKTeX
 
-   在 application 中搜索 `MiKTeX Console` 并打开，点击`Finish private setup`即可。
+   在 application 中搜索 `MiKTeX Console` 并打开，点击`Finish private setup`等待配置完成即可。
 
-   ![image-20200226212107368](README.assets/image-20200226212107368.png)
+   <img src="README.assets/image-20200226212107368.png" alt="image-20200226212107368" style="zoom:110%;" />
 
-#### step2：安装文本编辑器
+#### Step2：安装文本编辑器
 
-使用任意你喜欢的文本编辑器，这里推荐使用 **VSCode** ，并安装 **LaTeX Workshop** 插件。
+1. 配置环境
 
-<img src="README.assets/image-20200226122154420.png" alt="Vscode + LaTeX Workshop"  />
+   使用任意你喜欢的文本编辑器，这里推荐使用 **VSCode** ，并安装 **LaTeX Workshop** 插件。
 
-> 如果出现：`Recipe terminated with fatal error: spawn latexmk ENOENT`，请检查是否安装`latexmk`
+   <img src="README.assets/image-20200226122154420.png" alt="Vscode + LaTeX Workshop" style="zoom:67%;" />
+   
+2. [option] 编译链设置如下：
 
-有关更多 LaTeX Workshop 插件的使用方法，可见：[James-Yu/LaTeX-Workshop::wiki#compile](https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile#building-the-document)
+    ```
+        "latex-workshop.latex.tools": [
+            {
+                // 编译工具和命令
+                "name": "xelatex",
+                "command": "xelatex",
+                "args": [
+                    "-synctex=1",
+                    "-interaction=nonstopmode",
+                    "-file-line-error",
+                    "-pdf",
+                    "%DOCFILE%"
+                ]
+            },
+            {
+                "name": "biber",
+                "command": "biber",
+                "args": [
+                    "%DOCFILE%"
+                ]
+            },
+            {
+                "name": "bibtex",
+                "command": "bibtex",
+                "args": [
+                    "%DOCFILE%"
+                ]
+            }
+    
+        ],
+        "latex-workshop.latex.recipes": [
+            {
+                "name": "xelatex",
+                "tools": [
+                    "xelatex"
+                ]
+            },
+            {
+                "name": "xelatex -> bibtex -> xelatex*2",
+                "tools": [
+                    "xelatex",
+                    "bibtex",
+                    "xelatex",
+                    "xelatex"
+                ]
+            },
+        ]
+    ```
 
-## 参考文档
+#### Step3：尝试编译
+
+设定主文档为`thesis.tex`，VSCode 将自动开始尝试编译；或者你可以在 VSCode 中的 command palette 键入`build latex project`手动触发编译。等待 VSCode 编译完毕，左下角显示绿色钩√符号；在 command palette 键入`view latex PDF file`查看以 PDF 。
+
+#### Step4：开始你的*LaTeX*之旅
+
+### Windows
+
+欢迎补充
+
+### MacOS
+
+欢迎补充
+
+### Overleaf 在线编译
+
+欢迎补充
+
+## 致谢
 
 - [How to install LaTex on Ubuntu 18.04 Bionic Beaver Linux](https://linuxconfig.org/how-to-install-latex-on-ubuntu-18-04-bionic-beaver-linux)
+
 - [Install MiKTeX for Linux - MiKTeX.org](https://miktex.org/howto/install-miktex-unx)
+
+- [mtobeiyf/whu-thesis](https://github.com/mtobeiyf/whu-thesis)
+
+- [tsaoyu/WHUT-LaTeX-bachelor](https://github.com/tsaoyu/WHUT-LaTeX-bachelor)
