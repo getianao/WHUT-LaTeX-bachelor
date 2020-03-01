@@ -10,7 +10,7 @@ jobs:
         uses: xu-cheng/latex-action@master
         with:
           root_file: thesis.tex
-          args: "-xelatex -file-line-error -interaction=nonstopmode"
+          args: -xelatex -file-line-error -interaction=nonstopmode
           working_directory: paper/
       - name: Upload To Artifact
         uses: actions/upload-artifact@v1
