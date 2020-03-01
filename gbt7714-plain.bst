@@ -1,4 +1,4 @@
-﻿%%
+%%
 %% This is file `gbt7714-plain.bst',
 %% generated with the docstrip utility.
 %%

@@ -1,4 +1,3 @@
-% !TEX program = xelatex
 \documentclass[zihao=-4,a4paper]{ctexart}
 %==================== 数学符号公式 ============
 \usepackage{xeCJK}
@@ -110,14 +109,15 @@
 \thispagestyle{empty}
 %============== 论文正文   =================
 \pagestyle{fancy}
-\include{body/chapter1}      %
-\include{body/chapter2}
+\include{body/chapter1}       
+\include{body/chapter2}  
 \include{body/chapter3}
 \include{body/chapter4}
 \include{body/chapter5}
 %============= 参考文献 =====================
 \addcontentsline{toc}{section}{参考文献}
 {\zihao{5} \songti \bibliography{bibfile}}
+
 \clearpage
 \include{body/appendices}
 %=============  致谢  ======================
