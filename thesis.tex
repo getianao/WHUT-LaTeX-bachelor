@@ -1,8 +1,8 @@
 \documentclass[zihao=-4,a4paper]{ctexart}
 %==================== 数学符号公式 ============
 \usepackage{xeCJK}
-\newcommand{\zhongsong}{\CJKfontspec{STZhongsong.ttf}}%华文中宋，请自行下载字体并安装
-\setsansfont{[Times New Roman.ttf]}
+\newcommand{\zhongsong}{\CJKfontspec[Path=fonts/]{STZhongsong.ttf}}%华文中宋，请自行下载字体并安装
+\setsansfont{Times New Roman.ttf}[Path="fonts/"]
 \usepackage{amsmath}                 % AMS LaTeX宏包
 \usepackage[ruled]{algorithm2e}              %伪代码
 %\usepackage{amssymb}                % 用来排版漂亮的数学公式
@@ -89,15 +89,15 @@
 \newtheorem{conclusion}{结论}
 \newtheorem{assumption}{假设}
 %==================重定义 ===================
-\renewcommand{\contentsname}{目 ~~ 录}     
-\renewcommand{\abstractname}{摘 ~~ 要} 
-\renewcommand{\refname}{参考文献}     
+\renewcommand{\contentsname}{目 ~~ 录}
+\renewcommand{\abstractname}{摘 ~~ 要}
+\renewcommand{\refname}{参考文献}
 \renewcommand{\indexname}{索引}
 \renewcommand{\figurename}{图}
 \renewcommand{\tablename}{表}
 \renewcommand{\appendixname}{附录}
 \renewcommand{\proofname}{证明}
-\renewcommand{\algorithmcfname}{算法} 
+\renewcommand{\algorithmcfname}{算法}
 %\renewcommand{\algorithm}{算法} 
 %============== 封皮和前言 =================
 \input{body/cover}
@@ -109,14 +109,14 @@
 \thispagestyle{empty}
 %============== 论文正文   =================
 \pagestyle{fancy}
-\include{body/chapter1}       
-\include{body/chapter2}  
+\include{body/chapter1}
+\include{body/chapter2}
 \include{body/chapter3}
 \include{body/chapter4}
 \include{body/chapter5}
 %============= 参考文献 =====================
 \addcontentsline{toc}{section}{参考文献}
-{\zihao{5} \songti \bibliography{bibfile}}
+{\zihao{5} \songti \bibliography{./body/bibfile}}
 
 \clearpage
 \include{body/appendices}
