@@ -1,5 +1,7 @@
 # 武汉理工大学本科毕业论文 LaTeX 模版
 
+[![Actions Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fgetianao%2FWHUT-LaTeX-bachelor%2Fbadge%3Fref%3Dmaster&style=flat)](https://actions-badge.atrox.dev/getianao/WHUT-LaTeX-bachelor/goto?ref=master)
+
 ## Introduction
 
 This template is for undergraduate thesis at [Wuhan University of Techology](http://english.whut.edu.cn). 
@@ -73,57 +75,8 @@ All questions and suggestions are welcomed, please file an issue in this repo.
 
 #### Step3：尝试编译
 
-本模板中使用 [magic comments](https://github.com/James-Yu/LaTeX-Workshop/wiki/Compile#magic-comments) 来指定`xelatex`为默认编译工具（即在 tex 开头指明`% !TEX program = xelatex`），如果你的 LaTeX 不兼容 magic comments ，请自行设置默认的 LaTeX recipes。
+本模板已经为你配置好了编译工具链，设定主文档为`thesis.tex`，可以在 VSCode 中的 command palette 键入`build with recipe`并选择`xelatex -> bibtex -> xelatex*2`手动触发编译。等待 VSCode 编译完毕，左下角显示绿色钩√符号（第一次 build 时间可能较长），在 command palette 键入`view latex PDF file`查看以 PDF 。
 
-设定主文档为`thesis.tex`，保存后 VSCode 将自动开始尝试编译；或者你可以在 VSCode 中的 command palette 键入`build latex project`手动触发编译。等待 VSCode 编译完毕，左下角显示绿色钩√符号（第一次 build 时间可能较长），在 command palette 键入`view latex PDF file`查看以 PDF 。
-
-```json
-"latex-workshop.latex.tools": [
-    {
-        "name": "xelatex",
-        "command": "xelatex",
-        "args": [
-            "-synctex=1",
-            "-interaction=nonstopmode",
-            "-file-line-error",
-            "-pdf",
-            "%DOCFILE%"
-        ]
-    },
-    {
-        "name": "biber",
-        "command": "biber",
-        "args": [
-            "%DOCFILE%"
-        ]
-    },
-    {
-        "name": "bibtex",
-        "command": "bibtex",
-        "args": [
-            "%DOCFILE%"
-        ]
-    }
-
-],
-"latex-workshop.latex.recipes": [
-    {
-        "name": "xelatex",
-        "tools": [
-            "xelatex"
-        ]
-    },
-    {
-        "name": "xelatex -> bibtex -> xelatex*2",
-        "tools": [
-            "xelatex",
-            "bibtex",
-            "xelatex",
-            "xelatex"
-        ]
-    },
-]
-```
 #### Step4：开始你的*LaTeX*之旅
 
 如果你对 LaTeX 语法还不熟悉，可以从下面的链接中快速上手：
